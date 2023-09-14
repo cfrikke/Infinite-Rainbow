@@ -1,27 +1,14 @@
-let fb = document.getElementById("fancybutton");
-let buttonclicked = false;
-let permissions = false;
-let allowclick = false
-     function fancyBtn() { 
-    document.getElementById("fancybutton").classList.toggle("escapeMouse");
-    console.log("done");
-    allowclick = true;
-    }
-    function toggleClass() {
-     if(allowclick === true){
-    buttonclicked = true;
-    console.log("CLICKED!")
-    }}
-    function askPerms() {
-let notif = Notification.requestPermission();
-     permissions = true;
-console.log("Permissions accepted");
-}
-
-
-function stepTwo() {
-     if(buttonclicked === true && permissions === true){
-          alert("You made it to Night 2!");
-          window.open("page2.html")
-     }
-}
+document.addEventListener( 'scroll', function () {
+    var pre = document.querySelector( 'html' );
+    pre.innerHTML = pre.innerHTML + "<div id='redbox'></div>\n";
+    pre.innerHTML = pre.innerHTML + "<div id='redorangebox'></div>\n";
+    pre.innerHTML = pre.innerHTML + "<div id='yellowbox'></div>\n";
+    pre.innerHTML = pre.innerHTML + "<div id='yellowgreenbox'></div>\n";
+    pre.innerHTML = pre.innerHTML + "<div id='greenbox'></div>\n";
+    pre.innerHTML = pre.innerHTML + "<div id='tealbox'></div>\n";
+    pre.innerHTML = pre.innerHTML + "<div id='bluebox'></div>\n";
+    pre.innerHTML = pre.innerHTML + "<div id='dsbluebox'></div>\n";
+    pre.innerHTML = pre.innerHTML + "<div id='indigobox'></div>\n";
+    pre.innerHTML = pre.innerHTML + "<div id='bvbox'></div>\n";
+    pre.innerHTML = pre.innerHTML + "<div id='violetbox'></div>\n";
+  });
