@@ -1,10 +1,17 @@
+* {
+    margin: 0px;
+}
+
 div {
     height: 100px;
     width: 99.9%;
-    margin: 10px;
-    border-radius: 10px;
+    margin: 0px;
+    border-radius: 0px;
     background-color: blue;
+    border: 5px black;
 }
+
+
 
 #redbox {
     background-color: red;
@@ -47,4 +54,7 @@ div {
 #violetbox {
     background-color: violet;
 
+}
+.box {
+    border: 1px solid black;
 }
