@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html id="page">
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
 <head>
 <title>Divs</title>
 </head>
 <body id="body">
-    <div name="box" class="box"></div>
-    <div name="box" class="box"></div>
-    <div name="box" class="box"></div>
-    <div name="box" class="box"></div>
-    <div name="box" class="box"></div>
-    <div name="box" class="box"></div>
-    <div name="box" class="box"></div>
-    <div name="box" class="box"></div>
-    <div name="box" class="box"></div>
-    <div name="box" class="box"></div>
-    <div name="box" class="box"></div>
+    <div id="box" class="box"></div>
+<script>
+for(let i = 0; i < window.innerHeight; i+=100){
+  let node = document.getElementById("box");
+  var currentColor = window.getComputedStyle(node).backgroundColor;
+  
+  // Extract the RGB values from the background color
+  var rgb = extractRGB(currentColor);
 
+  // Increment each RGB component by 1
+  if(rgb.r == 255 && rgb.g < 254){
+    rgb.g += 10;
+  }else if(rgb.g == 255 && rgb.r > 0){
+    rgb.r -= 10;
+  }else if(rgb.g == 255 && rgb.r == 0 & rgb.b < 255){
+    rgb.b += 10;
+  }else 
+
+  // Apply the new color to the element
+  node.style.backgroundColor = `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
+
+  let clone = node.cloneNode(true);
+  document.getElementById("body").appendChild(clone);
+}
+</script>
 
 </body>
 </html>
