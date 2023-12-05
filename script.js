@@ -1,3 +1,25 @@
+function baseColor() {
+let node = document.getElementById("box");
+var currentColor = window.getComputedStyle(node).backgroundColor;
+
+// Extract the RGB values from the background color
+var rgb = extractRGB(currentColor);
+
+// Increment each RGB component by 1
+if(rgb.r == 255 && rgb.g < 254){
+  rgb.g += 10;
+}else if(rgb.g == 255 && rgb.r > 0){
+  rgb.r -= 10;
+}else if(rgb.g == 255 && rgb.r == 0 & rgb.b < 255){
+  rgb.b += 10;
+}
+
+// Apply the new color to the element
+node.style.backgroundColor = `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
+
+let clone = node.cloneNode(true);
+document.getElementById("body").appendChild(clone);
+};
 document.addEventListener('scroll', function() {
   let node = document.getElementById("box");
   var currentColor = window.getComputedStyle(node).backgroundColor;
@@ -12,7 +34,7 @@ document.addEventListener('scroll', function() {
     rgb.r -= 10;
   }else if(rgb.g == 255 && rgb.r == 0 & rgb.b < 255){
     rgb.b += 10;
-  }else 
+  }
 
   // Apply the new color to the element
   node.style.backgroundColor = `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;

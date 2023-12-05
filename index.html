@@ -10,28 +10,19 @@
 <body id="body">
     <div id="box" class="box"></div>
 <script>
-for(let i = 0; i < window.innerHeight; i+=100){
   let node = document.getElementById("box");
-  var currentColor = window.getComputedStyle(node).backgroundColor;
-  
-  // Extract the RGB values from the background color
-  var rgb = extractRGB(currentColor);
-
-  // Increment each RGB component by 1
-  if(rgb.r == 255 && rgb.g < 254){
-    rgb.g += 1;
-  }else if(rgb.g == 255 && rgb.r > 0){
-    rgb.r -= 1;
-  }else if(rgb.g == 255 && rgb.r == 0 & rgb.b < 255){
-    rgb.b += 1;
-  }
-
-  // Apply the new color to the element
-  node.style.backgroundColor = `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
-
   let clone = node.cloneNode(true);
   document.getElementById("body").appendChild(clone);
+
+for(let i = 0; i < window.innerHeight; i+=11.5){
+  let node = clone;
+  var currentColor = window.getComputedStyle(node).backgroundColor;
+  var rgb = extractRGB(currentColor);
+  node.style.backgroundColor = `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
+  let clone2 = node.cloneNode(true);
+  document.getElementById("body").appendChild(clone2);
 }
+document.getElementById("box").style.backgroundColor = `rgb(255, 0, 0)`;
 </script>
 
 </body>
