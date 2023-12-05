@@ -19,12 +19,12 @@ for(let i = 0; i < window.innerHeight; i+=100){
 
   // Increment each RGB component by 1
   if(rgb.r == 255 && rgb.g < 254){
-    rgb.g += 10;
+    rgb.g += 1;
   }else if(rgb.g == 255 && rgb.r > 0){
-    rgb.r -= 10;
+    rgb.r -= 1;
   }else if(rgb.g == 255 && rgb.r == 0 & rgb.b < 255){
-    rgb.b += 10;
-  }else 
+    rgb.b += 1;
+  }
 
   // Apply the new color to the element
   node.style.backgroundColor = `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
